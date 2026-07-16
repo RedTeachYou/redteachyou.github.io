@@ -1,1 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+
+<title>每日經文｜Bible Light</title>
+
+
+<meta 
+name="description"
+content="每日安靜閱讀聖經經文，在燭光中親近神的話語。">
+
+
+
+<!-- Google Font -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link 
+href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+
+
+
+
+<body>
+
+
+<!-- =================================
+     Candle Atmosphere
+================================= -->
+
+
+<div class="light-background"></div>
+
+
+<div class="candle-glow"></div>
+
+
+
+
+
+
+<!-- =================================
+     Main App
+================================= -->
+
+
+<main class="app">
+
+
+
+
+
+<header class="top-header">
+
+
+    <div class="logo-area">
+
+
+        <div class="cross-icon">
+
+            ✝
+
+        </div>
+
+
+        <h1>
+
+            每日經文
+
+        </h1>
+
+
+    </div>
+
+
+
+
+
+    <div class="date-box">
+
+
+        <span>
+
+            今日
+
+        </span>
+
+
+        <strong id="todayDate">
+
+            2026年7月16日
+
+        </strong>
+
+
+    </div>
+
+
+
+</header>
+
+
+
+
+
+
+
+
+<!-- =================================
+     Scripture Area
+================================= -->
+
+
+<section class="reading-area">
+
+
+
+    <div class="book-light"></div>
+
+
+
+    <article 
+    class="scripture-card"
+    id="verseCard">
+
+
+
+        <div class="paper-top">
+
+
+            <span>
+
+                靈修經文
+
+            </span>
+
+
+        </div>
+
+
+
+
+
+        <div class="verse-container">
+
+
+
+            <p 
+            id="verseText">
+
+
+                神愛世人，甚至將他的獨生子賜給他們，
+                叫一切信他的，不至滅亡，反得永生。
+
+
+            </p>
+
+
+
+
+
+            <div class="reference">
+
+
+                <span id="verseBook">
+
+                    約翰福音
+
+                </span>
+
+
+                <span>
+
+                    ·
+
+                </span>
+
+
+                <span id="verseChapter">
+
+                    3:16
+
+                </span>
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+
+
+
+        <div class="paper-bottom">
+
+
+            <span>
+
+                Bible Light
+
+            </span>
+
+
+        </div>
+
+
+
+
+    </article>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- =================================
+     Reading Information
+================================= -->
+
+
+<section class="reading-info">
+
+
+
+    <div class="count-box">
+
+
+        <span>
+
+            今日已閱讀
+
+        </span>
+
+
+        <strong id="readingCount">
+
+            0
+
+        </strong>
+
+
+        <span>
+
+            節
+
+        </span>
+
+
+    </div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- =================================
+     Actions
+================================= -->
+
+
+<section class="controls">
+
+
+
+<button 
+id="nextVerse"
+class="next-button">
+
+
+    下一節經文
+
+
+    <span>
+
+        →
+
+    </span>
+
+
+</button>
+
+
+
+
+
+
+<button
+id="shareVerse"
+class="share-button">
+
+
+    分享經文
+
+
+</button>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- Swipe Hint -->
+
+
+<div class="swipe-hint">
+
+
+    ← 左滑閱讀下一節 →
+
+
+</div>
+
+
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+
+
+<!-- Toast -->
+
+
+<div 
+class="toast"
+id="toast">
+
+
+    已複製經文
+
+
+</div>
+
+
+
+
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+
+</html>

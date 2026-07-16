@@ -1,0 +1,2025 @@
+/* =====================================
+   BibleLight
+   style.css
+   Part 1 / 3
+
+   Daylight Candle Theme
+===================================== */
+
+
+
+/* ===============================
+   Reset
+================================ */
+
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+
+body{
+
+
+    min-height:100vh;
+
+
+    overflow-x:hidden;
+
+
+    font-family:
+
+    "Noto Serif TC",
+    "Songti TC",
+    serif;
+
+
+    color:#3b3024;
+
+
+    background:#eadcc2;
+
+
+    -webkit-font-smoothing:antialiased;
+
+
+}
+
+
+
+
+
+
+
+/* ===============================
+   Background Atmosphere
+================================ */
+
+
+
+.light-background{
+
+
+    position:fixed;
+
+
+    inset:0;
+
+
+    z-index:-3;
+
+
+    background:
+
+
+    linear-gradient(
+
+        145deg,
+
+        #f8efd9 0%,
+
+        #e9d5ae 45%,
+
+        #d8bb83 100%
+
+    );
+
+
+}
+
+
+
+
+
+
+
+/*
+    木桌暖色陰影
+*/
+
+
+.light-background::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    background:
+
+
+    radial-gradient(
+
+        ellipse at center,
+
+        rgba(255,245,210,.75),
+
+        transparent 65%
+
+    );
+
+
+}
+
+
+
+
+
+
+
+
+/* ===============================
+   Candle Glow
+================================ */
+
+
+.candle-glow{
+
+
+    position:fixed;
+
+
+    width:380px;
+
+
+    height:380px;
+
+
+    top:-120px;
+
+
+    left:50%;
+
+
+    transform:translateX(-50%);
+
+
+    border-radius:50%;
+
+
+    background:
+
+
+    radial-gradient(
+
+        circle,
+
+        rgba(255,210,120,.45),
+
+        rgba(255,190,80,.15)
+
+        35%,
+
+        transparent
+
+        70%
+
+    );
+
+
+    filter:blur(20px);
+
+
+    animation:
+
+
+    candleBreath
+
+    5s
+
+    infinite
+
+    ease-in-out;
+
+
+    z-index:-2;
+
+
+}
+
+
+
+
+
+@keyframes candleBreath{
+
+
+    0%,100%{
+
+
+        opacity:.65;
+
+
+        transform:
+
+        translateX(-50%)
+
+        scale(1);
+
+
+    }
+
+
+
+    50%{
+
+
+        opacity:1;
+
+
+        transform:
+
+        translateX(-50%)
+
+        scale(1.12);
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ===============================
+   Main App
+================================ */
+
+
+
+.app{
+
+
+    width:100%;
+
+
+    min-height:100vh;
+
+
+    padding:
+
+
+    calc(env(safe-area-inset-top) + 25px)
+
+    20px
+
+    calc(env(safe-area-inset-bottom) + 30px);
+
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    align-items:center;
+
+
+}
+
+
+
+
+
+
+
+
+/* ===============================
+   Header
+================================ */
+
+
+
+.top-header{
+
+
+    width:100%;
+
+
+    max-width:450px;
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    align-items:center;
+
+
+    margin-bottom:35px;
+
+
+}
+
+
+
+
+
+
+
+
+.logo-area{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:12px;
+
+
+}
+
+
+
+.logo-area h1{
+
+
+    font-size:22px;
+
+
+    font-weight:600;
+
+
+    letter-spacing:3px;
+
+
+}
+
+
+
+.cross-icon{
+
+
+    color:#a67c32;
+
+
+    font-size:30px;
+
+
+}
+
+
+
+
+
+
+
+.date-box{
+
+
+    text-align:right;
+
+
+    color:#7c6546;
+
+
+    font-size:12px;
+
+
+    line-height:1.8;
+
+
+}
+
+
+
+.date-box strong{
+
+
+    display:block;
+
+
+    color:#4a3824;
+
+
+    font-size:14px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ===============================
+   Reading Area
+================================ */
+
+
+
+.reading-area{
+
+
+    width:100%;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    position:relative;
+
+
+    flex:1;
+
+
+}
+
+
+
+
+
+.book-light{
+
+
+    position:absolute;
+
+
+    width:90%;
+
+
+    height:80%;
+
+
+    background:
+
+
+    radial-gradient(
+
+        ellipse,
+
+        rgba(255,220,140,.5),
+
+        transparent
+
+    );
+
+
+    filter:blur(40px);
+
+
+}
+
+
+
+
+
+
+
+
+/* ===============================
+   Scripture Card Base
+================================ */
+
+
+
+.scripture-card{
+
+
+    position:relative;
+
+
+    width:100%;
+
+
+    max-width:430px;
+
+
+    min-height:460px;
+
+
+    z-index:2;
+
+
+    padding:55px 30px;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+
+    background:
+
+
+    linear-gradient(
+
+        135deg,
+
+        #fffaf0,
+
+        #f7ebd0
+
+    );
+
+
+    border-radius:20px;
+
+
+    box-shadow:
+
+
+    0 25px 60px
+
+    rgba(90,60,20,.25);
+
+
+
+    overflow:hidden;
+
+
+
+}
+/* =====================================
+   Bible Paper & Interaction
+   Part 2 / 3
+===================================== */
+
+
+
+
+
+/* ===============================
+   Paper Texture
+================================ */
+
+
+
+.scripture-card::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    background:
+
+
+    radial-gradient(
+
+        rgba(120,90,40,.08)
+
+        1px,
+
+        transparent
+
+        1px
+
+    );
+
+
+    background-size:
+
+    6px 6px;
+
+
+    opacity:.35;
+
+
+    pointer-events:none;
+
+
+}
+
+
+
+
+
+
+
+/* 紙張邊緣光影 */
+
+
+.scripture-card::after{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:12px;
+
+
+    border-radius:14px;
+
+
+    border:
+
+
+    1px solid
+
+    rgba(160,120,60,.18);
+
+
+    pointer-events:none;
+
+
+}
+
+
+
+
+
+
+
+
+/* ===============================
+   Paper Header
+================================ */
+
+
+
+.paper-top{
+
+
+    position:absolute;
+
+
+    top:25px;
+
+
+    left:50%;
+
+
+    transform:translateX(-50%);
+
+
+}
+
+
+
+.paper-top span{
+
+
+    color:#a67832;
+
+
+    font-size:13px;
+
+
+    letter-spacing:5px;
+
+
+}
+
+
+
+
+
+.paper-top span::before,
+
+
+.paper-top span::after{
+
+
+    content:"";
+
+
+    display:inline-block;
+
+
+    width:28px;
+
+
+    height:1px;
+
+
+    background:#c29a56;
+
+
+    vertical-align:middle;
+
+
+    margin:0 10px;
+
+
+}
+
+
+
+
+
+
+
+
+/* ===============================
+   Verse Content
+================================ */
+
+
+
+.verse-container{
+
+
+    position:relative;
+
+
+    z-index:2;
+
+
+    width:100%;
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+
+#verseText{
+
+
+    font-size:27px;
+
+
+    line-height:2;
+
+
+    letter-spacing:2px;
+
+
+    font-weight:500;
+
+
+    color:#382d21;
+
+
+    animation:
+
+
+    verseAppear
+
+    .8s
+
+    ease;
+
+
+}
+
+
+
+
+
+@keyframes verseAppear{
+
+
+    from{
+
+
+        opacity:0;
+
+
+        transform:
+
+        translateY(20px);
+
+
+    }
+
+
+
+    to{
+
+
+        opacity:1;
+
+
+        transform:
+
+        translateY(0);
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+.verse-change{
+
+
+    animation:
+
+
+    verseChange
+
+    .5s
+
+    ease;
+
+
+}
+
+
+
+
+
+@keyframes verseChange{
+
+
+    from{
+
+
+        opacity:0;
+
+
+        filter:blur(5px);
+
+
+    }
+
+
+    to{
+
+
+        opacity:1;
+
+
+        filter:blur(0);
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+/* ===============================
+   Reference
+================================ */
+
+
+
+.reference{
+
+
+    margin-top:45px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    gap:10px;
+
+
+    color:#a67832;
+
+
+    font-size:16px;
+
+
+    letter-spacing:1px;
+
+
+}
+
+
+
+
+
+
+
+
+/* ===============================
+   Paper Footer
+================================ */
+
+
+
+.paper-bottom{
+
+
+    position:absolute;
+
+
+    bottom:25px;
+
+
+    color:#b79a68;
+
+
+    font-size:11px;
+
+
+    letter-spacing:4px;
+
+
+}
+
+
+
+
+
+
+
+
+/* ===============================
+   Reading Count
+================================ */
+
+
+
+.reading-info{
+
+
+    margin-top:25px;
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+
+.count-box{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:8px;
+
+
+    color:#806541;
+
+
+    font-size:14px;
+
+
+}
+
+
+
+
+
+.count-box strong{
+
+
+    font-size:24px;
+
+
+    color:#9b702d;
+
+
+}
+
+
+
+
+
+
+
+
+/* ===============================
+   Buttons
+================================ */
+
+
+
+.controls{
+
+
+    margin-top:25px;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:12px;
+
+
+    width:100%;
+
+
+    max-width:350px;
+
+
+}
+
+
+
+
+
+
+
+
+button{
+
+
+    font-family:inherit;
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+
+
+
+
+.next-button{
+
+
+    height:58px;
+
+
+    border:none;
+
+
+    border-radius:50px;
+
+
+    background:
+
+
+    linear-gradient(
+
+        135deg,
+
+        #b88a3d,
+
+        #8d6224
+
+    );
+
+
+    color:white;
+
+
+    font-size:18px;
+
+
+    letter-spacing:3px;
+
+
+    box-shadow:
+
+
+    0 12px 25px
+
+    rgba(130,90,30,.35);
+
+
+    transition:.3s;
+
+
+}
+
+
+
+
+
+.next-button span{
+
+
+    margin-left:10px;
+
+
+}
+
+
+
+
+
+
+
+.next-button:hover{
+
+
+    transform:
+
+    translateY(-3px);
+
+
+}
+
+
+
+
+
+
+
+.next-button:active{
+
+
+    transform:
+
+    scale(.96);
+
+
+}
+
+
+
+
+
+
+
+
+
+.share-button{
+
+
+    height:48px;
+
+
+    border-radius:50px;
+
+
+    border:
+
+
+    1px solid
+
+    rgba(140,100,40,.35);
+
+
+    background:
+
+
+    rgba(255,250,230,.45);
+
+
+    color:#76562d;
+
+
+    font-size:15px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ===============================
+   Swipe Hint
+================================ */
+
+
+
+.swipe-hint{
+
+
+    margin-top:25px;
+
+
+    color:#927650;
+
+
+    font-size:12px;
+
+
+    letter-spacing:2px;
+
+
+    animation:
+
+    hintMove
+
+    3s
+
+    infinite;
+
+
+}
+
+
+
+
+
+
+
+@keyframes hintMove{
+
+
+    0%,100%{
+
+
+        opacity:.4;
+
+
+    }
+
+
+
+    50%{
+
+
+        opacity:1;
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+/* ===============================
+   Toast
+================================ */
+
+
+
+.toast{
+
+
+    position:fixed;
+
+
+    bottom:40px;
+
+
+    left:50%;
+
+
+    transform:
+
+
+    translateX(-50%)
+
+    translateY(30px);
+
+
+    background:
+
+
+    rgba(80,55,20,.9);
+
+
+    color:white;
+
+
+    padding:
+
+    12px 25px;
+
+
+    border-radius:30px;
+
+
+    font-size:14px;
+
+
+    opacity:0;
+
+
+    pointer-events:none;
+
+
+    transition:.35s;
+
+
+}
+
+
+
+.toast.show{
+
+
+    opacity:1;
+
+
+    transform:
+
+
+    translateX(-50%)
+
+    translateY(0);
+
+
+}/* =====================================
+   Responsive & Premium Finish
+   Part 3 / 3
+===================================== */
+
+
+
+
+
+/* ===============================
+   Mobile Optimization
+================================ */
+
+
+
+@media(max-width:430px){
+
+
+
+    .app{
+
+
+        padding-left:18px;
+
+        padding-right:18px;
+
+
+    }
+
+
+
+
+
+    .top-header{
+
+
+        margin-bottom:20px;
+
+
+    }
+
+
+
+
+
+    .logo-area h1{
+
+
+        font-size:19px;
+
+
+        letter-spacing:2px;
+
+
+    }
+
+
+
+
+
+    .cross-icon{
+
+
+        font-size:26px;
+
+
+    }
+
+
+
+
+
+    .date-box{
+
+
+        font-size:11px;
+
+
+    }
+
+
+
+
+
+    .scripture-card{
+
+
+        min-height:430px;
+
+
+        padding:
+
+        50px 25px;
+
+
+        border-radius:18px;
+
+
+    }
+
+
+
+
+
+    #verseText{
+
+
+        font-size:24px;
+
+
+        line-height:2.05;
+
+
+    }
+
+
+
+
+
+    .reference{
+
+
+        margin-top:35px;
+
+
+        font-size:14px;
+
+
+    }
+
+
+
+
+
+    .next-button{
+
+
+        height:54px;
+
+
+        font-size:16px;
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ===============================
+   Small Phone
+================================ */
+
+
+
+@media(max-width:360px){
+
+
+
+    .scripture-card{
+
+
+        min-height:390px;
+
+
+    }
+
+
+
+
+
+    #verseText{
+
+
+        font-size:21px;
+
+
+        letter-spacing:1px;
+
+
+    }
+
+
+
+
+
+    .paper-top span{
+
+
+        font-size:11px;
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ===============================
+   Landscape Phone
+================================ */
+
+
+
+@media(max-height:600px)
+and
+(orientation:landscape){
+
+
+
+    .app{
+
+
+        padding-top:15px;
+
+
+    }
+
+
+
+
+
+    .top-header{
+
+
+        margin-bottom:10px;
+
+
+    }
+
+
+
+
+
+    .scripture-card{
+
+
+        min-height:300px;
+
+
+    }
+
+
+
+
+
+    #verseText{
+
+
+        font-size:22px;
+
+
+    }
+
+
+
+
+
+    .controls{
+
+
+        margin-top:15px;
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ===============================
+   Tablet
+================================ */
+
+
+
+@media(min-width:768px){
+
+
+
+    .app{
+
+
+        max-width:760px;
+
+
+        margin:auto;
+
+
+    }
+
+
+
+
+
+    .top-header{
+
+
+        max-width:600px;
+
+
+    }
+
+
+
+
+
+    .scripture-card{
+
+
+        max-width:560px;
+
+
+        min-height:600px;
+
+
+    }
+
+
+
+
+
+    #verseText{
+
+
+        font-size:34px;
+
+
+        line-height:2.15;
+
+
+    }
+
+
+
+
+
+    .controls{
+
+
+        max-width:400px;
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ===============================
+   Desktop
+================================ */
+
+
+
+@media(min-width:1200px){
+
+
+
+    .app{
+
+
+        transform:
+
+        scale(1.05);
+
+
+    }
+
+
+
+
+
+    .scripture-card{
+
+
+        max-width:620px;
+
+
+        min-height:650px;
+
+
+    }
+
+
+
+
+
+    #verseText{
+
+
+        font-size:38px;
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ===============================
+   Very Large Screen
+================================ */
+
+
+
+@media(min-width:1600px){
+
+
+
+    .candle-glow{
+
+
+        width:550px;
+
+
+        height:550px;
+
+
+    }
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ===============================
+   Touch Interaction
+================================ */
+
+
+
+button{
+
+
+    -webkit-tap-highlight-color:
+
+    transparent;
+
+
+}
+
+
+
+
+
+button:active{
+
+
+    transform:scale(.96);
+
+
+}
+
+
+
+
+
+
+
+
+/* ===============================
+   Smooth Loading
+================================ */
+
+
+
+.scripture-card{
+
+
+    will-change:
+
+    transform,
+
+    opacity;
+
+
+}
+
+
+
+
+
+
+
+
+/* ===============================
+   Remove Selection
+================================ */
+
+
+
+.app{
+
+
+    user-select:none;
+
+
+    -webkit-user-select:none;
+
+
+}
+
+
+
+
+#verseText{
+
+
+    user-select:text;
+
+
+    -webkit-user-select:text;
+
+
+}
+
+
+
+
+
+
+
+
+/* ===============================
+   Warm Light Overlay
+================================ */
+
+
+
+body::after{
+
+
+    content:"";
+
+
+    position:fixed;
+
+
+    inset:0;
+
+
+    pointer-events:none;
+
+
+    background:
+
+
+    radial-gradient(
+
+        circle at 50% 15%,
+
+        rgba(255,220,140,.18),
+
+        transparent 35%
+
+    );
+
+
+    z-index:10;
+
+
+}
+
+
+
+
+
+
+
+
+/* ===============================
+   Accessibility
+================================ */
+
+
+
+button:focus-visible{
+
+
+    outline:
+
+    2px solid #b88a3d;
+
+
+    outline-offset:4px;
+
+
+}
